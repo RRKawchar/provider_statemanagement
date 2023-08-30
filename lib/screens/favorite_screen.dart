@@ -24,9 +24,9 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         actions: [
           InkWell(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>FavoriteViewScreen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const FavoriteViewScreen()));
             },
-            child: Icon(Icons.favorite),
+            child: const Icon(Icons.favorite),
           )
         ],
       ),
