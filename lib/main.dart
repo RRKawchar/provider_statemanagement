@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_statemanagement/provider/auth_provider.dart';
 import 'package:provider_statemanagement/provider/count_provider.dart';
 import 'package:provider_statemanagement/provider/favorite_provider.dart';
 import 'package:provider_statemanagement/provider/progressing_provider.dart';
 import 'package:provider_statemanagement/provider/theme_change_provider.dart';
+import 'package:provider_statemanagement/screens/login_with_rest_api.dart';
 import 'package:provider_statemanagement/screens/theme_screen.dart';
 import 'package:provider_statemanagement/screens/value_notifier_listner.dart';
 import 'package:provider_statemanagement/utils/my_theme.dart';
@@ -42,6 +44,9 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(
             create: (_)=>FavoriteProvider(),
           ),
+          ChangeNotifierProvider(
+            create: (_)=>AuthProvider(),
+          ),
 
     ],
     child: Builder(builder: (context){
@@ -49,10 +54,10 @@ class MyApp extends StatelessWidget {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: MyTheme.lightTheme,
+        theme: MyTheme.darkTheme,
         themeMode: themeProvider.themeMode,
         darkTheme: MyTheme.darkTheme,
-        home:  ValueNotifierListener(),
+        home:  LoginWithRestApi(),
       );
     },)
     );

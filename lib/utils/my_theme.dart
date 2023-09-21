@@ -13,6 +13,7 @@ static ThemeData darkTheme=ThemeData(
   primarySwatch: Colors.red,
   appBarTheme: const AppBarTheme(
     backgroundColor: Colors.teal,
+    centerTitle: true
   ),
   iconTheme: const IconThemeData(
     color: Colors.pink,
